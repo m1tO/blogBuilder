@@ -59,9 +59,28 @@
 				else
 				{ ?>  
 					<div id="contentRight">
-						<input type="button" onClick="window.location='login/chiudiSessione.php'" value="Logout">
+					<?php
+					$user=$_SESSION['username'];
+						$query2="SELECT ruoli.id FROM ruoli, ruolixutenti, utenti WHERE (ruoli.id=ruolixutenti.idRuoli) && (ruolixutenti.idUtenti=utenti.id)  && (utenti.username='$user')";
+						$result2=mysql_query($query2,$myconn) or die ("Errore query2");
+						$riga2=mysql_fetch_array($result2);
+					   if($riga2['id']==1)
+						{ print("other");
+						} elseif($riga2['id']==2)
+							{ print("lettore");
+							}elseif($riga2['id']==3)
+								{ print("scrittore");
+								} elseif($riga2['id']==4)
+									{ print("amministratore");
+								}
+					   else {
+						print("utente sconosciuto");
+						}
+				            
+					?> 
+				 		<input type="button" onClick="window.location='login/chiudiSessione.php'" value="Logout">
 					</div>
-				<?php } 
+				<?php }
 						$query1="SELECT titolo, testo, DATE_FORMAT(dataPub, '%d') AS giorno, DATE_FORMAT(dataPub, '%m') AS mese FROM post";
 						$result1=mysql_query($query1,$myconn) or die ("Errore query 1");
 						$riga1=mysql_fetch_array($result1);
@@ -73,6 +92,7 @@
 							$riga1=mysql_fetch_array($result1);
 						}
 					?>
+
 					<div id="clearer">&nbsp;
             		</div>
 		        	<div id="footer">
