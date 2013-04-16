@@ -12,7 +12,6 @@
 		<?php 
 			include ("../config.php");
 		?>
-
 	</head>
 	<body>
 		<?php
@@ -20,20 +19,22 @@
 			$passwd=$_POST["passwd"];
 			$passwd= md5(md5($passwd));
 
+			//Estrapolazione utenti DB
 			$query="SELECT username,passwd FROM utenti";
 			$result= mysql_query($query,$myconn) or die("Errore query");
 			$riga=mysql_fetch_array($result);
-			$flag=0;
+			
+			$flag=0; //Variabile di controllo
 			while($riga)
 			{
+				//Controllo esistenza utente
 				if($username==$riga['username'] && $passwd==$riga['passwd'])
 				{
 					$flag=1;
 				}
 				$riga=mysql_fetch_array($result);
 			}
-			?>
-		
+		?>
 		<div id="container">
 			<div id="header">
 				<div class="logo">
@@ -42,24 +43,24 @@
 			</div>
             <div id="main">
 				<div id="content">
-		<?php         
+					<?php         
 		               if($flag==1)
                         {
                                 $_SESSION['username'] = $username;
-				print('Login effettuato <meta http-equiv="refresh" content="2; url=../index.php"');	
+								print('Login effettuato <meta http-equiv="refresh" content="2; url=../index.php" </div>');	
                         }
                         else
                         {
-                                print("Login non effettuato");
+                                print('Login non effettuato <meta http-equiv="refresh" content="2; url=../index.php"</div>');
                         }			
-    		 ?>   	 	
+    		 		?>   	 	
 				</div>
-                    <div id="clearer">&nbsp;
-            		</div>
-		        </div>
-				<div id="footer">
-        		&copy;2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
+				<div id="clearer">&nbsp;
+            	</div>
+		        <div id="footer">
+       				<br><br>&copy;2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
 				</div>
 			</div>
+		</div>
 	</body>
-</html>			
+</html>		

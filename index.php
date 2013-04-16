@@ -1,4 +1,5 @@
-<?php	
+<?php
+	//Per quanto riguarda l'utilizzo del materiale presente in questo sito, declino ogni responsabilità da qualunque eventuale danno dovuto all'uso di esso.
 	session_start();
 	session_regenerate_id(TRUE);
 ?>
@@ -7,7 +8,7 @@
 	<head>
     	<title>Blog</title>
 		<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-		<meta name="author" content="Emmanuele Catanzaro" />
+		<meta name="author" content="Emmanuele Catanzaro & Lo Porto Giovanni" />
 		<meta name="generator" content="" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
         <?php include("config.php"); ?>
@@ -21,6 +22,7 @@
 			</div>
 				<div id="main">
 					<?php
+						//Estrapolazione menu
 						$query="SELECT nome, percorso FROM menu";
 						$result=mysql_query($query,$myconn) or die ("Errore query");
 						$riga=mysql_fetch_array($result);
@@ -40,6 +42,7 @@
 					</div>
 	        		<br>
 				<?php 
+				//Controllo sessione
 				if(!isset($_SESSION['username']))
 				{ ?>
 					 <div id="contentRight"><h2>Login</h2>
@@ -59,42 +62,52 @@
 				else
 				{ ?>  
 					<div id="contentRight">
-					<?php
-					$user=$_SESSION['username'];
-						$query2="SELECT ruoli.id FROM ruoli, ruolixutenti, utenti WHERE (ruoli.id=ruolixutenti.idRuoli) && (ruolixutenti.idUtenti=utenti.id)  && (utenti.username='$user')";
-						$result2=mysql_query($query2,$myconn) or die ("Errore query2");
-						$riga2=mysql_fetch_array($result2);
-					   if($riga2['id']==1)
-						{ print("other");
-						} elseif($riga2['id']==2)
-							{ print("lettore");
-							}elseif($riga2['id']==3)
-								{ print("scrittore");
-								} elseif($riga2['id']==4)
-									{ print("amministratore");
-								}
-					   else {
-						print("utente sconosciuto");
-						}
-				            
-					?> 
-				 		<input type="button" onClick="window.location='login/chiudiSessione.php'" value="Logout">
+						<?php
+							//Estrapolazione e controllo ruolo utente
+							$user=$_SESSION['username'];
+							$query2="SELECT ruoli.id FROM ruoli, ruolixutenti, utenti WHERE (ruoli.id=ruolixutenti.idRuoli) && (ruolixutenti.idUtenti=utenti.id)  && (utenti.username='$user')";
+							$result2=mysql_query($query2,$myconn) or die ("Errore query 2");
+							$riga2=mysql_fetch_array($result2);
+							
+					   		
+							if($riga2['id']==2)
+							{ 
+								print('lettore');
+							}
+							elseif($riga2['id']==3)
+							{
+								print('<br><a href="post/newPost.php">Inserisci nuovo Post</a>');
+							}
+							elseif($riga2['id']==4)
+							{
+								print('amministratore');
+							}
+						?> 
+				 		<br><br>
+                        <input type="button" onClick="window.location='login/chiudiSessione.php'" value="Logout">
 					</div>
 				<?php }
-						$query1="SELECT titolo, testo, DATE_FORMAT(dataPub, '%d') AS giorno, DATE_FORMAT(dataPub, '%m') AS mese FROM post";
+						//Estrapolazione primi 20 post con limite dei primi 250 caratteri a post
+						$query1="SELECT COUNT(id) AS id, titolo, LEFT(testo, 150) AS testo, DATE_FORMAT(dataPub, '%d') AS giorno, DATE_FORMAT(dataPub, '%m') AS mese, percorso AS percorsoPost FROM post GROUP BY dataPub DESC LIMIT 20";
 						$result1=mysql_query($query1,$myconn) or die ("Errore query 1");
 						$riga1=mysql_fetch_array($result1);
 						
-						while($riga1) 
+						if($riga1['id']==0)
 						{
-							$m=(int) $riga1['mese'];
-							print('<div id="content"><div class="blog"><h2>'.$mese[$m].'</h2><h3>'.$riga1['giorno'].'</h3></div><h2>'.$riga1['titolo'].'</h2>'.$riga1['testo'].'</div>');
-							$riga1=mysql_fetch_array($result1);
+							print('<div id="content">Nessun post presente in DataBase</div>');
+						}
+						else
+						{
+						while($riga1) 
+							{
+								$m=(int) $riga1['mese'];
+								print('<div id="content"><div class="blog"><h2>'.$mese[$m].'</h2><h3>'.$riga1['giorno'].'</h3></div><h2>'.$riga1['titolo'].'</h2>'.$riga1['testo'].'<br><a href='.$riga1['percorsoPost'].'>Continua a leggere</a></div>');
+								$riga1=mysql_fetch_array($result1);
+							}
 						}
 					?>
-
-					<div id="clearer">&nbsp;
-            		</div>
+					<!--<div id="clearer">&nbsp;
+            		</div>-->
 		        	<div id="footer">
        					<br><br>&copy;2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
 					</div>
