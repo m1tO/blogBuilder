@@ -1,4 +1,4 @@
 blogBuilder
 ===========
 
-A simple platform for building blogs
+A simple platform for blog building
