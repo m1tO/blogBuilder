@@ -10,7 +10,10 @@
 		<meta name="generator" content="" />
 		<link href="../css/style.css" rel="stylesheet" type="text/css" />
 		<?php 
+			//Includo file di configurazione
 			include ("../config.php");
+			//Includo file query
+			require("../query.php");
 		?>
 	</head>
 	<body>
@@ -19,26 +22,21 @@
 			$passwd=$_POST["passwd"];
 			$passwd= md5(md5($passwd));
 
-			//Estrapolazione utenti DB
-			$query="SELECT username,passwd FROM utenti";
-			$result= mysql_query($query,$myconn) or die("Errore query");
-			$riga=mysql_fetch_array($result);
-			
 			$flag=0; //Variabile di controllo
-			while($riga)
+			while($rigaUtenti)
 			{
 				//Controllo esistenza utente
-				if($username==$riga['username'] && $passwd==$riga['passwd'])
+				if($username==$rigaUtenti['username'] && $passwd==$rigaUtenti['passwd'])
 				{
 					$flag=1;
 				}
-				$riga=mysql_fetch_array($result);
+				$rigaUtenti=mysql_fetch_array($resultUtenti);
 			}
 		?>
 		<div id="container">
 			<div id="header">
 				<div class="logo">
-                     <a href="#"><img src="../img/logo.png" alt="logo" title="0x00" /></a>
+                     <a href="../index.php"><img src="../<?php print($logoSito);?>" alt="logo"/></a>
                 </div>
 			</div>
             <div id="main">
@@ -47,18 +45,18 @@
 		               if($flag==1)
                         {
                                 $_SESSION['username'] = $username;
-								print('Login effettuato <meta http-equiv="refresh" content="2; url=../index.php" </div>');	
+								print('<h2>Login effettuato</h2> <meta http-equiv="refresh" content="2; url=../index.php">');	
                         }
                         else
                         {
-                                print('Login non effettuato <meta http-equiv="refresh" content="2; url=../index.php"</div>');
+                                print('<h2>Login non effettuato</h2> <meta http-equiv="refresh" content="2; url=../index.php">');
                         }			
     		 		?>   	 	
 				</div>
 				<div id="clearer">&nbsp;
             	</div>
 		        <div id="footer">
-       				<br><br>&copy;2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
+       				<br><br>&copy; 2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
 				</div>
 			</div>
 		</div>

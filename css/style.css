@@ -30,8 +30,8 @@ body {
         color: inherit;
 }
 #header {
-        height: 198px;
-        padding-top: 20px;
+        height: 200px;
+        padding-top: 0px;
         margin: 0 auto;
         width: 100%;
         background-image: url(../img/bg.png) repeat-y left;
@@ -52,6 +52,66 @@ body {
       margin-top: 3%;
       margin-left: 10%;
 }
+
+#header .functions {
+    position:absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    margin: 0 11% 0 0;
+    color: #999999;
+    font-size: small;
+}
+    #header .functions p {
+        margin: 0;
+        padding: 0;
+    }
+    #header .functions a,
+    #header .functions a:visited {
+        color: #777777;
+        margin: 0;
+    }
+    #header .functions a:hover {
+    }
+    #header .functions form#cse-search-box {
+		margin: 0 28px 0 0 ;
+		padding: 0;
+    	display: inline;
+    }
+    #header .functions div {
+	display: inline;
+	}
+
+    #header .functions input {
+    	margin: 0;
+    	border: 1px solid #ebf2f6;
+	border-width: 1px 0 1px 1px;
+	border-radius: 5px 0 0 5px;
+	color: #999999;
+	background-color: #ebf2f6;
+	padding: 2px;
+	}
+	#header .functions input:hover,
+	#header .functions input:focus {
+		color: #444444;
+		background-color: #fcfcfc;
+		outline: 0;
+	}
+	#header .functions input.button {
+		background-color: #adc4e6;
+		border: 1px solid #ebf2f6;
+		border-width: 1px 1px 1px 0px;
+		border: 0;
+		border-radius: 0  5px 5px 0;
+		width: 1.4em;
+		margin-left: -4px;
+		color: #f4f4f4;
+	}
+	#header .functions input.button:hover {
+		color: #ffffff;
+		background-color: #90a3c0;
+	}
+
 
 #main {
     clear: both;
@@ -81,10 +141,10 @@ body {
 
 #menu {
    	padding: 0;
-    float: left;
-    margin: -50px 0 0 -40px;
+    	float: left;
+	margin: -50px 0 0 -40px;
 	width: 100%;
-    position: relative;
+        position: relative;
 }
 
 #menu .nav li  {
@@ -95,7 +155,7 @@ body {
     margin: 2px;
     float: left;
     -webkit-border-top-right-radius: 5px;
-	-webkit-border-top-left-radius: 5px
+    -webkit-border-top-left-radius: 5px
     -moz-border-radius-topright: 5px;
     -moz-border-radius-topleft: 5px
     border-top-right-radius: 5px;
@@ -122,28 +182,27 @@ body {
     	color: yellow;
 	}
 
-
 #content {
 	position: relative;
-    text-align: justify;
-    text-shadow: 0px;
-    float: left;
-    margin: 20px 0 0;
+	text-align: justify;
+        text-shadow: 0px;
+        float: left;
+        margin: 20px 0 0;
 	width: 60%;
   	padding: 15px 2% 15px 2%;
-    background-color: #ffffff;
-    -webkit-border-top-right-radius: 5px;
+        background-color: #ffffff;
+        -webkit-border-top-right-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
-    -webkit-border-bottom-right-radius: 5px;
-    -webkit-border-bottom-left-radius: 5px;
+    	-webkit-border-bottom-right-radius: 5px;
+    	-webkit-border-bottom-left-radius: 5px;
 	-moz-border-radius-topright: 5px;
 	-moz-border-radius-topleft: 5px;
-    -moz-border-radius-bottomright: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    border-top-right-radius: 5px;
+    	-moz-border-radius-bottomright: 5px;
+    	-moz-border-radius-bottomleft: 5px;
+    	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
 }
     #content a,
     #content a:visited {
@@ -166,7 +225,7 @@ body {
                 font-weight: normal;
                 background-color: inherit;
                 text-transform: uppercase;
-        }
+        } 
         #content h3 {
                 font-weight: normal;
                 border: 1px #eeeeee dashed;
@@ -176,8 +235,8 @@ body {
                 border-radius: 10px 10px 0 0;
                 background-color: #C1DAD6;
                 padding: 5px;
-        } */
-    /*#content images {
+        }
+      #content images {
         padding: 5px;
         margin: 5px 10px;
         background-color: #eeeeee;
@@ -200,14 +259,34 @@ body {
             background: none;
         }
 
+	#titolo{
+			margin: -20px 15px 0px 0;
+	}
+	#autore {
+		margin: -15px 05px 30px 0;
+		font-size: small;
+	}
+	
 #contentRight {
-	position: relative;
+   
+    position: relative;
     text-align: justify;
     text-shadow: 0px;
     float: right;
-    margin: 20px 40px 0 0;
+    margin: 15px 40px 0 0;
     width: 25%;
-	padding: 5px 2% 15px 2%;
+    padding: 5px 2% 15px 2%;
+}
+
+#contentRight1 {
+   
+    position: relative;
+    text-align: justify;
+    text-shadow: 0px;
+    float: right;
+    margin: 0px 0px 0 0px;
+    width: 100%;
+    padding: 5px 2% 15px 2%;
     background-color: #ffffff;
     -webkit-border-top-right-radius: 5px;
     -webkit-border-top-left-radius: 5px;
@@ -239,12 +318,13 @@ body {
         }
         
         #contentRight h3 {
-			font-weight: normal;
+	    font-weight: normal;
             border: 1px #eeeeee dashed;
-            border-width: 0px 0px 1px 0px;
+            border-width: 0px 0px 0px 0px;
+	    width: 100%;
             color: #374b61;
             text-shadow: 1px 1px 0px #ffffff;
-            border-radius: 10px 10px 0 0;
+            border-radius: 10px 10px 10px 10px;
             background-color: #C1DAD6;
             padding: 5px;
         }
@@ -255,14 +335,80 @@ body {
         text-decoration: none;
         color: #0066ff;
 	}
-    #contentRight a:hover {
+
+#contentRight a:hover {
         text-decoration: underline;
     }
-	
+
+.avatar {
+	position:relative;
+	float: right;
+}
+
+
+#contentRight2 {
+    position: relative;
+    text-align: justify;
+    text-shadow: 0px;
+    float: right;
+    margin: 20px 0px 0 0px;
+    width: 100%;
+    padding: 5px 2% 15px 2%;
+    background-color: #ffffff;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+ #contentRight2 a,
+    #contentRight2 a:visited {
+        text-decoration: none;
+        color: #0066ff;
+        }
+    #contentRight2 a:hover {
+        text-decoration: underline;
+    }
+        #contentRight2 p {
+            margin: .5em 0;
+        }
+        #contentRight2 h1 {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+        #contentRight2 h3 {
+            font-weight: normal;
+            border: 1px #eeeeee dashed;
+            border-width: 0px 0px 0px 0px;
+            color: #374b61;
+            text-shadow: 1px 1px 0px #ffffff;
+            border-radius: 10px 10px 0 0;
+            background-color: #C1DAD6;
+            padding: 5px;
+        }
+    #contentRight2 images {
+        padding: 5px;
+        margin: 5px 10px;
+        background-color: #eeeeee;
+        text-decoration: none;
+        color: #0066ff;
+        }
+
+#contentRight2 a:hover {
+        text-decoration: underline;
+   }
+
 .blog {
 	background: url(../img/calendar.png) no-repeat;
 	width: 54px;
-	height: 46px;
+	height: 55px;
 	float: left;
 	margin: 0 15px 0 0;
 }
@@ -280,11 +426,11 @@ body {
   	text-shadow: none;
   	margin: 0;
   	text-align: center;
-  	padding: -10px 0 0 0;
+  	padding: 5px 0 0 0;
 }
 
 .clearer {
-	margin: 0;
+    margin: 0;
     padding: 0;
     border: 0;
     height: 0;
@@ -297,8 +443,8 @@ body {
     font-size: 0.85em;
     margin: 0;
     padding: 14px 0 0 0;
-    height: 70px;
-    width: 80%;
+    height: 100px;
+    width: 100%;
     color: #777777;
     text-align: left;
     text-shadow: 1px 1px 0 black;
