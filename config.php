@@ -1,9 +1,13 @@
 <?php
 /* Connessione al Server */
-$myconn=mysql_connect("localhost","root","Manu2199","3306") or die("Errore Connessione");
+$myconn=mysql_connect("localhost","root","Manu2199","3306") or die("Errore Connessione Server");
 
 /* Selezione Database */
-mysql_select_db("blog", $myconn) or die ("Errore Selezione");
+mysql_select_db("blog", $myconn) or die ("Errore Selezione DataBase");
+
+/*Variabili comuni*/
+$nomeSito="Blog";
+$logoSito="img/logo.png";	//Dimensioni 360x140px
 
 /*Variabili comuni*/
 $nomeSito="Blog";

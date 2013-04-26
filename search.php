@@ -97,9 +97,17 @@
 					<!--<div id="clearer">&nbsp;
             		</div>-->
 		        	<div id="footer">
+<<<<<<< HEAD
        					<br><br>&copy;2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
+=======
+       					<br><br>&copy; 2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 					</div>
               </div>
 		</div>
 	</body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5

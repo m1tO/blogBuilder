@@ -23,6 +23,7 @@
 							if($ln=="it")
 							{
 								//Codice italiano ?>
+<<<<<<< HEAD
 								<form name="installazione" action="it.php" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
 			    		        	<table>
         				    	    	<tr>
@@ -35,39 +36,78 @@
                     			        </tr>
 		            			        <tr>
     			                			<td>Indirizzo DataBase*</td>
+=======
+								<form action="it.php" method="post">
+			    		        	<table>
+        				    	    	<tr>
+            		    			    	<td>Nome Sito</td>
+			                		        <td><input type="text" name="nomeSito" value=""></td>
+										</tr>
+                        			    <tr>
+		        	    		        	<td>Upload Logo Sito</td>
+        			        		        <td><input type="text" name="nomeSito" value=""></td>
+                    			            <td><input type="button" value="Upload" onClick="return confirm('Assicurati che il logo abbia dimensioni: \n360 x 140 pixel.')"></td>
+										</tr>
+		            			        <tr>
+    			                			<td>Indirizzo DataBase</td>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 		    	    		                <td><input type="text" name="indirizzoDB" value=""></td>
             					            <td><font color="#FF6633"><i>Es. localhost</i></font></td>
 										</tr>
             			        		<tr>
+<<<<<<< HEAD
 		                			    	<td>Nome DataBase*</td>
 			    		                    <td><input type="text" name="nomeDB" value=""></td>
                                             <td><font color="#FF6633"><i>Niente spazi</i></font></td>
 										</tr>
             		    			    <tr>
 			                		    	<td>Utente PhpMyAdmin*</td>
+=======
+		                			    	<td>Nome DataBase</td>
+			    		                    <td><input type="text" name="nomeDB" value=""></td>
+										</tr>
+            		    			    <tr>
+			                		    	<td>Utente DataBase</td>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
             			        		    <td><input type="text" name="userDB" value=""></td>
 	                    				   	<td><font color="#FF6633"><i>Es. root</i></font></td>
 										</tr>
     	    				            <tr>
+<<<<<<< HEAD
         	    	    			    	<td>Password PhpMyAdmin*</td>
 			            	    	        <td><input type="password" name="passwdDB" value=""></td>
 										</tr>
 	                				    <tr>
 			    	                		<td>Porta DataBase*</td>
+=======
+        	    	    			    	<td>Password DataBase</td>
+			            	    	        <td><input type="password" name="passwdDB" value=""></td>
+										</tr>
+	                				    <tr>
+			    	                		<td>Porta DataBase</td>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
         				                	<td><input type="text" name="portaDB" value="3306" /></td>
 										</tr>
     	            	    			<br>
 			        	            	<tr>
+<<<<<<< HEAD
             			                	<td><input type="submit" name="crea" value="Fine processo guidato" onClick="return confirm('Conferma la tua scelta \nTutti i campi sono obbligatori.')" /></td>
 	        	        			    	<td><input type="reset" name="reset" value="Reset Campi" /></td>
 										</tr>
 									</table>
                                     <font color="#FF0000" size="-1"><i>*Campi obbligatori</i></font>
+=======
+            			                	<td><input type="submit" name="crea" value="Fine processo guidato" onClick="return confirm('Conferma la tua scelta.')" /></td>
+	        	        			    	<td><input type="reset" name="reset" value="Reset Campi" /></td>
+										</tr>
+									</table>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 	                			</form><?php
 							}
 							elseif ($ln=="en")
 							{
 								//Codice inglese ?>
+<<<<<<< HEAD
 								<form name="installazione" action="en.php" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
 			    		        	<table>
         				    	    	<tr>
@@ -80,24 +120,55 @@
 										</tr>
 		            			        <tr>
     			                			<td>Address DataBase*</td>
+=======
+								<form action="en.php" method="post">
+			    		        	<table>
+        				    	    	<tr>
+            		    			    	<td>Name Site</td>
+			                		        <td><input type="text" name="nomeSito" value=""></td>
+										</tr>
+                        			    <tr>
+		        	    		        	<td>Upload Logo Site</td>
+        			        		        <td><input type="text" name="nomeSito" value=""></td>
+                    			            <td><input type="button" value="Upload" onClick="return confirm('Logo dimensions are: \n360 x 140 pixels?')"></td>
+										</tr>
+		            			        <tr>
+    			                			<td>Address DataBase</td>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 		    	    		                <td><input type="text" name="indirizzoDB" value=""></td>
             					            <td><font color="#FF6633"><i>Eg. localhost</i></font></td>
 										</tr>
             			        		<tr>
+<<<<<<< HEAD
 		                			    	<td>Name DataBase*</td>
 			    		                    <td><input type="text" name="nomeDB" value=""></td>
 										</tr>
             		    			    <tr>
 			                		    	<td>User PhpMyAdmin*</td>
+=======
+		                			    	<td>Name DataBase</td>
+			    		                    <td><input type="text" name="nomeDB" value=""></td>
+										</tr>
+            		    			    <tr>
+			                		    	<td>User DataBase</td>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
             			        		    <td><input type="text" name="userDB" value=""></td>
 	                    				   	<td><font color="#FF6633"><i>Eg. root</i></font></td>
 										</tr>
     	    				            <tr>
+<<<<<<< HEAD
         	    	    			    	<td>Password PhpMyAdmin*</td>
 			            	    	        <td><input type="password" name="passwdDB" value=""></td>
 										</tr>
 	                				    <tr>
 			    	                		<td>Port DataBase*</td>
+=======
+        	    	    			    	<td>Password DataBase</td>
+			            	    	        <td><input type="password" name="passwdDB" value=""></td>
+										</tr>
+	                				    <tr>
+			    	                		<td>Port DataBase</td>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
         				                	<td><input type="text" name="portaDB" value="3306" /></td>
 										</tr>
     	            	    			<br>
@@ -106,7 +177,10 @@
 	        	        			    	<td><input type="reset" name="reset" value="Reset" /></td>
 										</tr>
 									</table>
+<<<<<<< HEAD
                                     <font color="#FF0000" size="-1"><i>*Required Fields </i></font>
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 	                			</form><?php
 							}
 						}

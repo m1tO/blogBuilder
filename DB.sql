@@ -73,6 +73,7 @@ CREATE TABLE `ruoli` (
 
 insert  into `ruoli`(`id`,`nome`) values (1,'other'),(2,'lettore'),(3,'scrittore'),(4,'amministratore');
 
+<<<<<<< HEAD
 /*Table structure for table `sottocategorie` */
 
 DROP TABLE IF EXISTS `sottocategorie`;
@@ -86,6 +87,20 @@ CREATE TABLE `sottocategorie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `sottocategorie` */
+=======
+/*Table structure for table `sottocategoria` */
+
+DROP TABLE IF EXISTS `sottocategoria`;
+
+CREATE TABLE `sottocategoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) DEFAULT NULL,
+  `descrizione` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `sottocategoria` */
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 
 /*Table structure for table `sottocategoriepost` */
 
@@ -114,11 +129,19 @@ CREATE TABLE `utenti` (
   `avatar` varchar(250) DEFAULT 'img/avatar/default.png',
   `idRuolo` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `utenti` */
 
 insert  into `utenti`(`id`,`username`,`passwd`,`nome`,`cognome`,`email`,`avatar`,`idRuolo`) values (1,'demo','6c5ac7b4d3bd3311f033f971196cfa75','demo','demo','demo@demo.it','img/avatar/default.png',3),(2,'prova','6c5ac7b4d3bd3311f033f971196cfa75','prova','prova',NULL,'img/avatar/default.png',3);
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `utenti` */
+
+insert  into `utenti`(`id`,`username`,`passwd`,`nome`,`cognome`,`email`,`avatar`,`idRuolo`) values (1,'demo','6c5ac7b4d3bd3311f033f971196cfa75','demo','demo','demo@demo.it','img/avatar/default.png',3);
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

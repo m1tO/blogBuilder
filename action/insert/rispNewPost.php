@@ -39,7 +39,11 @@
 						$nome=$rigaInfoUtente['nome'];
 						
 						//Rimozione caratteri speciali per creazione percorso/file
+<<<<<<< HEAD
 						$cod = rand(1, 999);	//Numero casuale da inserire al nome del file
+=======
+						$cod = rand(1, 99);	//Numero casuale da inserire al nome del file
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 						$nomeFile=preg_replace("/[^a-zA-Z-0-9_-]/","", $titolo);	//Tutti i caratteri speciali verranno cancellati
 						$file=$nomeFile."-".$cod.".php";	//Creazione del nome del file compreso di numero casuale ed estensione
 						$percorso="post/".$file;	//Percorso di collegamento per il DB da dove andare a prendere il file
@@ -49,6 +53,7 @@
 						$resultPost1 = mysql_query($post1, $myconn) or die("Errore inserimento post");
 						
 						//Query estrapolazione post dopo l'inserimento appena avvenuto
+<<<<<<< HEAD
 						$post="SELECT id, titolo, testo, DATE_FORMAT(dataPub, '%d') AS giorno, DATE_FORMAT(dataPub, '%m') AS mese FROM post WHERE (titolo='$titolo')";
 						$resultPost=mysql_query($post, $myconn) or die("Errore query post appena inserito");
 						$rigaPost=mysql_fetch_array($resultPost);
@@ -68,6 +73,11 @@
 								$resultSottocategoriePost = mysql_query($querySottocategoriePost, $myconn) or die("Errore inserimento Sottocategorie Post");
 							}
 						}
+=======
+						$post="SELECT titolo, testo, DATE_FORMAT(dataPub, '%d') AS giorno, DATE_FORMAT(dataPub, '%m') AS mese FROM post WHERE (titolo='$titolo')";
+						$resultPost=mysql_query($post, $myconn) or die("Errore query post appena inserito");
+						$rigaPost=mysql_fetch_array($resultPost);
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 						
 						//Passaggio dei campi mese e giorno in nuove variabili 
 						$m=(int) $rigaPost['mese'];	//La variabile m rappresenta l'indice per la stampa del mese (Array dentro config.php)
@@ -75,7 +85,10 @@
 						$giorno=$rigaPost['giorno'];	
 						
 						//Variabili che verranno utilizzate per la creazione dei file es. titoloPost.php
+<<<<<<< HEAD
 						$nomeFile="$"."nomeFile";
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 						$nomeSito="$"."nomeSito";
 						$logoSito="$"."logoSito";
 						$rigaMenu="$"."rigaMenu";
@@ -84,6 +97,7 @@
 						$rigaInfoUtente="$"."rigaInfoUtente";
 						$sessione="$"."_SESSION";
 						$rigaRuolo="$"."rigaRuolo";
+<<<<<<< HEAD
 						$queryCategoriaPost="$"."queryCategoriaPost";
 						$resultCategoriaPost="$"."resultCategoriaPost";
 						$rigaCategoriaPost="$"."rigaCategoriaPost";
@@ -92,6 +106,11 @@
 						$resultSottocategoriePost="$"."resultSottocategoriaPost";
 						$rigaSottocategoriePost="$"."rigaSottocategoriaPost";
 						
+=======
+						
+
+
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 /*Contenuto file*/
 $codice="<?php
 	//Avvio sessione per il controllo login
@@ -109,10 +128,13 @@ $codice="<?php
 		<meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\" />
 		<meta name=\"author\" content=\"Emmanuele Catanzaro & Lo Porto Giovanni\" />
 		<meta name=\"generator\" content=\"\" />
+<<<<<<< HEAD
 		<!--Script Social Network-->
         <script type=\"text/javascript\">var switchTo5x=true;</script>
 		<script type=\"text/javascript\" src=\"../js/button.js\"></script>
 		<script type=\"text/javascript\">stLight.options({publisher: \"229e3611-b862-4f69-8667-ebfbc036cc8b\", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 		<!--Collegamento al foglio di stile-->
         <link href=\"../css/style.css\" rel=\"stylesheet\" type=\"text/css\" />
     </head>
@@ -181,7 +203,10 @@ $codice="<?php
 				{ ?>  
                 	<div id=\"contentRight\">
 						<div id=\"contentRight1\">
+<<<<<<< HEAD
 							<h2>Profilo: <i><?php print({$rigaInfoUtente}['username']); ?></i></h2>
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 							<?php
 								print('<div class=\"avatar\"><img src=\"../'.{$rigaInfoUtente}['avatar'].'\"</img></div>');
 								//Controllo ruolo utente
@@ -205,6 +230,7 @@ $codice="<?php
                         	<input type=\"button\" onClick=\"window.location='../login/closedSession.php'\" value=\"Logout\">
 						</div>
 						<div id=\"contentRight2\">
+<<<<<<< HEAD
 							<h2>Categorie</h2>
 							<div style=\"height: 100px; overflow:auto;\">
 								<?php
@@ -247,11 +273,16 @@ $codice="<?php
                                 <span class='st_linkedin_large' displayText='LinkedIn'></span>
 				 			</div>
                             <br>
+=======
+							Testo di prova
+				 			<br><br>
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 						</div>
                     </div>
 				<?php }	?>
                		
                     <!--Post generato automaticamente in fase di creazione-->
+<<<<<<< HEAD
 					<div id=\"content\"><div class=\"blog\"><h2>{$mese1}</h2><h3>{$giorno}</h3></div><div id=\"titolo\"><h2>{$titolo}</h2></div><div id=\"autore\"><i>Scritto da: {$cognome}&nbsp;{$nome}</i></div>{$testo}
 					<br><br>
 					<?php
@@ -279,6 +310,10 @@ $codice="<?php
 							}
 						}	?>
 				</div>
+=======
+					<div id=\"content\"><div class=\"blog\"><h2>{$mese1}</h2><h3>{$giorno}</h3></div><div id=\"titolo\"><h2>{$titolo}</h2></div><div id=\"autore\"><i>Scritto da: {$cognome}&nbsp;{$nome}</i></div>{$testo}</div>
+					
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
                     <!--<div id=\"clearer\">&nbsp;
             		</div>-->
 		        	<div id=\"footer\">
@@ -290,7 +325,10 @@ $codice="<?php
 </html>
 ";						
 /*Fine contenuto file*/
+<<<<<<< HEAD
 
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 					//Script per apertura, scrittura e permessi di lettura file
 					$fo=fopen("../../post/".$file,"w");	//Percorso di creazione file
 					fwrite($fo,$codice);
@@ -313,4 +351,8 @@ $codice="<?php
 			</div>
 		</div>
 	</body>
+<<<<<<< HEAD
 </html>	
+=======
+</html>		
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5

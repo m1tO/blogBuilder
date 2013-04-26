@@ -7,8 +7,11 @@
 	include("config.php");
 	//Includo file query
 	require("query.php");
+<<<<<<< HEAD
 	//Includo file impaginazione
 	require("pagination.php");
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 ?>
 <html>
 	<head>
@@ -16,11 +19,14 @@
 		<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 		<meta name="author" content="Emmanuele Catanzaro & Lo Porto Giovanni" />
 		<meta name="generator" content="" />
+<<<<<<< HEAD
         <!--Script Social Network-->
         <script type="text/javascript">var switchTo5x=true;</script>
 		<script type="text/javascript" src="js/button.js"></script>
 		<script type="text/javascript">stLight.options({publisher: "229e3611-b862-4f69-8667-ebfbc036cc8b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
         
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 		<!--Collegamento al foglio di stile-->
         <link href="css/style.css" rel="stylesheet" type="text/css" />
     </head>
@@ -89,7 +95,10 @@
 				{ ?>  
                 	<div id="contentRight">
 						<div id="contentRight1">
+<<<<<<< HEAD
 							<h2>Profilo: <i><?php print($rigaInfoUtente['username']); ?></i></h2>
+=======
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 							<?php
 								print('<div class="avatar"><img src="'.$rigaInfoUtente['avatar'].'"</img></div>');
 								//Controllo ruolo utente
@@ -113,6 +122,7 @@
                         	<input type="button" onClick="window.location='login/closedSession.php'" value="Logout">
 						</div>
 						<div id="contentRight2">
+<<<<<<< HEAD
                         	<div align="center">
                             	<h2>Social Network</h2>
                                 <!--Pulsanti di condivisione-->
@@ -144,17 +154,34 @@
 						
 						//Controllo numero di post presenti nel DB
 						if($rigaNumPost['id']==0)
+=======
+							Testo di prova
+				 			<br><br>
+						</div>
+                    </div>
+				<?php }
+						//Controllo numero di post presenti nel DB
+						if($rigaPost['id']==0)
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 						{
 							print('<div id="content">Nessun post presente in DataBase</div>');
 						}
 						else
 						{
+<<<<<<< HEAD
 							while($rigaPost) 
+=======
+						while($rigaPost) 
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 							{
 								//Converto variabile mese in intero per generare l'indice dell'array presente in config.php
 								$m=(int) $rigaPost['mese'];	
 								//Stampa di tutti i post presenti nella tabella post
+<<<<<<< HEAD
 								print('<div id="content"><div class="blog"><h2>'.$mese[$m].'</h2><h3>'.$rigaPost['giorno'].'</h3></div><div id=titolo><h2>'.$rigaPost['titolo'].'</h2></div><div id="autore"><i>Scritto da: '.$rigaPost['cognome'].'&nbsp;'.$rigaPost['nome'].'</i></div>'.$rigaPost['testo'].'<br><br><a href='.$rigaPost['percorsoPost'].'>Continua a leggere</a></div>');
+=======
+								print('<div id="content"><div class="blog"><h2>'.$mese[$m].'</h2><h3>'.$rigaPost['giorno'].'</h3></div><div id=titolo><h2>'.$rigaPost['titolo'].'</h2></div><div id="autore"><i>Scritto da: '.$rigaIdUtenti['cognome'].'&nbsp;'.$rigaIdUtenti['nome'].'</i></div>'.$rigaPost['testo'].'<br><br><a href='.$rigaPost['percorsoPost'].'>Continua a leggere</a></div>');
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 								$rigaPost=mysql_fetch_array($resultPost);
 							}
 						}
@@ -162,6 +189,7 @@
 					<!--<div id="clearer">&nbsp;
             		</div>-->
 		        	<div id="footer">
+<<<<<<< HEAD
                     	<?php
 							//Stampa numeri di pagine
 							/*$lista = $p->listaPagine($_GET['p'], $pagine);
@@ -172,6 +200,9 @@
 							echo $navigatore;
 						?>
        					<br><br>&copy;2012 - <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
+=======
+       					<br><br>&copy; 2012- <?php error_reporting(0); echo date("Y"); ?> - Lo Porto Giovanni &amp Emmanuele Catanzaro
+>>>>>>> f76d70f560dd28b40d34238f6f8ba893a97414f5
 					</div>
               </div>
 		</div>
